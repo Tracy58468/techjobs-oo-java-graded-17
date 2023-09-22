@@ -8,17 +8,20 @@ public class Employer {
     private static int nextId = 1;
     private String value;
 
+    /** Constructors **/
+
+    // First constructor sets employer ID. Never called on its own, but generally from inside another constructor.
     public Employer() {
         id = nextId;
         nextId++;
     }
 
     public Employer(String value) {
-        this();
+        this(); // Calls the first constructor to get the ID.
         this.value = value;
     }
 
-    // Custom toString, equals, and hashCode methods:
+    /** Custom toString, equals, and hashCode methods: **/
 
     @Override
     public String toString() {
@@ -38,7 +41,7 @@ public class Employer {
         return Objects.hash(getId());
     }
 
-    // Getters and Setters:
+    /** Getters and Setters: **/
 
     public int getId() {
         return id;
