@@ -13,6 +13,11 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
+    private String employerString = String.valueOf(employer);
+    private String locationString = String.valueOf(location);
+    private String positionTypeString = String.valueOf(positionType);
+    private String coreCompetencyString = String.valueOf(coreCompetency);
+
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
@@ -29,6 +34,73 @@ public class Job {
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
+    }
+
+    /** Custom toString **/
+
+    @Override
+    public String toString() {
+
+        if (getName() equals() "") {
+
+            setName("Data not available");
+
+        }
+
+        if (getEmployer() == null) {
+
+            employerString = "Data not available";
+
+        } else {
+
+            employerString = String.valueOf(employer);
+
+        }
+
+        if (getLocation() == null) {
+
+            locationString = "Data not available";
+
+        } else {
+
+            locationString = String.valueOf(location);
+
+        }
+
+        if (getPositionType() == null) {
+
+            positionTypeString = "Data not available";
+
+        } else {
+
+            positionTypeString = String.valueOf(positionType);
+
+        }
+
+        if (getCoreCompetency() == null) {
+
+            coreCompetencyString = "Data not available";
+
+        } else {
+
+            coreCompetencyString = String.valueOf(coreCompetency);
+
+        }
+
+        return System.lineSeparator() +
+                "ID:  " + id +
+                System.lineSeparator() +
+                "Name: " + name +
+                System.lineSeparator() +
+                "Employer: " + String.valueOf(employer) +
+                System.lineSeparator() +
+                "Location: " + String.valueOf(location) +
+                System.lineSeparator() +
+                "Position Type: " + String.valueOf(positionType) +
+                System.lineSeparator() +
+                "Core Competency: " + String.valueOf(coreCompetency) +
+                System.lineSeparator();
+
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
@@ -50,6 +122,10 @@ public class Job {
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
+
+    public static int getNextId() {
+        return nextId;
+    }
 
     public int getId() {
         return id;
