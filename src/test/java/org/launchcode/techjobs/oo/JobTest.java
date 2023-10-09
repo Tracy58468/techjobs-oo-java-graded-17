@@ -64,12 +64,11 @@ public class JobTest {
 
         // Act
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-//        Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         // Assert
         String msg = "Custom toString method returns correct string.";
         String expected = System.lineSeparator() +
-                "ID:  " + Job.getNextId() +
+                "ID: 1" +
                 System.lineSeparator() +
                 "Name: Product tester" +
                 System.lineSeparator() +
@@ -82,30 +81,9 @@ public class JobTest {
                 "Core Competency: Persistence" +
                 System.lineSeparator();
 
-//        String emptyId = "Data not available";
-//        String emptyName = "Data not available";
-//        String emptyEmployer = "Data not available";
-//        String emptyLocation = "Data not available";
-//        String emptyPositionType = "Data not available";
-//        String emptyCoreCompetency = "Data not available";
-
-        String actual = System.lineSeparator() +
-                "ID:  " + String.valueOf(Job.getNextId()) +
-                System.lineSeparator() +
-                "Name: " + String.valueOf(job1.getName()) +
-                System.lineSeparator() +
-                "Employer: " + String.valueOf(job1.getEmployer()) +
-                System.lineSeparator() +
-                "Location: " + String.valueOf(job1.getLocation()) +
-                System.lineSeparator() +
-                "Position Type: " + String.valueOf(job1.getPositionType()) +
-                System.lineSeparator() +
-                "Core Competency: " + String.valueOf(job1.getCoreCompetency()) +
-                System.lineSeparator();
+        String actual = job1.toString();
 
         assertEquals(msg, expected, actual);
-
-        /** Need to add the non-existent data part of this test. **/
 
     }
 
@@ -113,44 +91,88 @@ public class JobTest {
     public void testToStringContainsCorrectLabelsAndData() {
 
         // Act
-        Job job1 = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 //        Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         // Assert
         String msg = "Custom toString method returns correct string.";
         String expected = System.lineSeparator() +
-                "ID:  " + Job.getNextId() +
+                "ID: " + job1.getNextId() +
                 System.lineSeparator() +
                 "Name: Product tester" +
                 System.lineSeparator() +
                 "Employer: ACME" +
                 System.lineSeparator() +
-                "Location: Data not available" +
+                "Location: Desert" +
                 System.lineSeparator() +
                 "Position Type: Quality control" +
                 System.lineSeparator() +
                 "Core Competency: Persistence" +
                 System.lineSeparator();
 
-//        String emptyId = "Data not available";
-//        String emptyName = "Data not available";
-//        String emptyEmployer = "Data not available";
-//        String emptyLocation = "Data not available";
-//        String emptyPositionType = "Data not available";
-//        String emptyCoreCompetency = "Data not available";
+        String actual = System.lineSeparator() +
+                "ID: " + Job.getNextId() +
+                System.lineSeparator() +
+                "Name: " + job1.getName() +
+                System.lineSeparator() +
+                "Employer: " + job1.getEmployer() +
+                System.lineSeparator() +
+                "Location: " + job1.getLocation() +
+                System.lineSeparator() +
+                "Position Type: " + job1.getPositionType() +
+                System.lineSeparator() +
+                "Core Competency: " + job1.getCoreCompetency() +
+                System.lineSeparator();
+
+        assertEquals(msg, expected, actual);
+
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField() {
+
+        // Act
+        Job job2 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+
+        // Assert
+        String msg = "Custom toString method returns 'Data not available' for empty string.";
+
+//        String emptyId = "ID: Data not available";
+        String emptyName = "Name: Data not available";
+        String emptyEmployer = "Employer: Data not available";
+        String emptyLocation = "Location: Data not available";
+        String emptyPositionType = "Position Type: Data not available";
+        String emptyCoreCompetency = "Core Competency: Data not available";
+
+        String expected = System.lineSeparator() +
+                "ID: " + job2.getNextId() +
+                System.lineSeparator() +
+                emptyName +
+                System.lineSeparator() +
+                emptyEmployer +
+                System.lineSeparator() +
+                emptyLocation +
+                System.lineSeparator() +
+                emptyPositionType +
+                System.lineSeparator() +
+                emptyCoreCompetency +
+                System.lineSeparator();
+
+        System.out.println("JobTest labels and data");
+        System.out.println(job2.getName());
 
         String actual = System.lineSeparator() +
-                "ID:  " + String.valueOf(Job.getNextId()) +
+                "ID: " + job2.getNextId() +
                 System.lineSeparator() +
-                "Name: " + String.valueOf(job1.getName()) +
+                "Name: " + job2.getName() +
                 System.lineSeparator() +
-                "Employer: " + String.valueOf(job1.getEmployer()) +
+                "Employer: " + job2.getEmployer() +
                 System.lineSeparator() +
-                "Location: " + String.valueOf(job1.getLocation()) +
+                "Location: " + job2.getLocation() +
                 System.lineSeparator() +
-                "Position Type: " + String.valueOf(job1.getPositionType()) +
+                "Position Type: " + job2.getPositionType() +
                 System.lineSeparator() +
-                "Core Competency: " + String.valueOf(job1.getCoreCompetency()) +
+                "Core Competency: " + job2.getCoreCompetency() +
                 System.lineSeparator();
 
         assertEquals(msg, expected, actual);
@@ -159,3 +181,4 @@ public class JobTest {
 
 }
 
+// String.valueOf(job2.getName())

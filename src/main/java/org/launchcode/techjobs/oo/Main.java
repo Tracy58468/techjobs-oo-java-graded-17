@@ -5,6 +5,12 @@ public class Main {
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         System.out.println(job1.toString());
+
+        Job job2 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+
+        System.out.println(job2.toString());
+        System.out.println(String.valueOf(job2.getName()));
+
 //        Job job2 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
 //        Job job3 = new Job("Ice cream tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
 //

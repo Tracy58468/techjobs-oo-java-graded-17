@@ -41,9 +41,13 @@ public class Job {
     @Override
     public String toString() {
 
-        if (getName() equals() "") {
+        if (getName() == "") {
 
             setName("Data not available");
+
+        } else {
+
+            setName(name);
 
         }
 
@@ -88,7 +92,7 @@ public class Job {
         }
 
         return System.lineSeparator() +
-                "ID:  " + id +
+                "ID: " + id +
                 System.lineSeparator() +
                 "Name: " + name +
                 System.lineSeparator() +
