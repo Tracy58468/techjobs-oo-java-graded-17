@@ -132,7 +132,7 @@ public class JobTest {
     public void testToStringHandlesEmptyField() {
 
         // Act
-        Job job2 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        Job job2 = new Job("", new Employer("empl"), new Location("loc"), new PositionType("pos type"), new CoreCompetency("comp"));
 
         // Assert
         String msg = "Custom toString method returns 'Data not available' for empty string.";
@@ -158,8 +158,9 @@ public class JobTest {
                 emptyCoreCompetency +
                 System.lineSeparator();
 
-        System.out.println("JobTest labels and data");
         System.out.println(job2.getName());
+        System.out.println("JobTest labels and data");
+
 
         String actual = System.lineSeparator() +
                 "ID: " + job2.getNextId() +

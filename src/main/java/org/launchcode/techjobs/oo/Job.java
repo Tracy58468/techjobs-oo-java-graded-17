@@ -88,92 +88,40 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
-//    public String getEmployerString() {
-//        return employerString;
-//    }
-//
-//    public void setEmployerString(String employerString) {
-//        this.employerString = employerString;
-//    }
-//
-//    public String getLocationString() {
-//        return locationString;
-//    }
-//
-//    public void setLocationString(String locationString) {
-//        this.locationString = locationString;
-//    }
-//
-//    public String getPositionTypeString() {
-//        return positionTypeString;
-//    }
-//
-//    public void setPositionTypeString(String positionTypeString) {
-//        this.positionTypeString = positionTypeString;
-//    }
-//
-//    public String getCoreCompetencyString() {
-//        return coreCompetencyString;
-//    }
-//
-//    public void setCoreCompetencyString(String coreCompetencyString) {
-//        this.coreCompetencyString = coreCompetencyString;
-//    }
-
     /** Custom toString **/
 
     @Override
     public String toString() {
 
-        if (getName() == "") {
+        if (getName().equals("")) {
 
             setName("Data not available");
 
-        } else {
-
-            setName(name);
-
         }
 
-        if (String.valueOf(employer) == "") {
-
-            employerString = "Data not available";
-
-        } else {
-
-            employerString = String.valueOf(employer);
-
-        }
-
-        if (String.valueOf(location) == "") {
-
-            locationString = "Data not available";
-
-        } else {
-
-            locationString = String.valueOf(location);
-
-        }
-
-        if (String.valueOf(positionType) == "") {
-
-            positionTypeString = "Data not available";
-
-        } else {
-
-            positionTypeString = String.valueOf(positionType);
-
-        }
-
-        if (String.valueOf(coreCompetency) == "") {
-
-            coreCompetencyString = "Data not available";
-
-        } else {
-
-            coreCompetencyString = String.valueOf(coreCompetency);
-
-        }
+//        if (String.valueOf(employer) == "") {
+//
+//            employerString = "Data not available";
+//
+//        }
+//
+//        if (String.valueOf(location) == "") {
+//
+//            locationString = "Data not available";
+//
+//        }
+//
+//        if (String.valueOf(positionType) == "") {
+//
+//            positionTypeString = "Data not available";
+//
+//        }
+//
+//        if (String.valueOf(coreCompetency) == "") {
+//
+//            coreCompetencyString = "Data not available";
+//
+//        }
 
         return System.lineSeparator() +
                 "ID: " + id +
