@@ -132,7 +132,7 @@ public class JobTest {
     public void testToStringHandlesEmptyField() {
 
         // Act
-        Job job2 = new Job("", new Employer("empl"), new Location("loc"), new PositionType("pos type"), new CoreCompetency("comp"));
+        Job job2 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
 
         // Assert
         String msg = "Custom toString method returns 'Data not available' for empty string.";
@@ -145,7 +145,7 @@ public class JobTest {
         String emptyCoreCompetency = "Core Competency: Data not available";
 
         String expected = System.lineSeparator() +
-                "ID: " + job2.getNextId() +
+                "ID: " + job2.getId() +
                 System.lineSeparator() +
                 emptyName +
                 System.lineSeparator() +
@@ -158,23 +158,11 @@ public class JobTest {
                 emptyCoreCompetency +
                 System.lineSeparator();
 
-        System.out.println(job2.getName());
-        System.out.println("JobTest labels and data");
 
+//        System.out.println("JobTest labels and data");
+//        System.out.println(job2.toString());
 
-        String actual = System.lineSeparator() +
-                "ID: " + job2.getNextId() +
-                System.lineSeparator() +
-                "Name: " + job2.getName() +
-                System.lineSeparator() +
-                "Employer: " + job2.getEmployer() +
-                System.lineSeparator() +
-                "Location: " + job2.getLocation() +
-                System.lineSeparator() +
-                "Position Type: " + job2.getPositionType() +
-                System.lineSeparator() +
-                "Core Competency: " + job2.getCoreCompetency() +
-                System.lineSeparator();
+        String actual = job2.toString();
 
         assertEquals(msg, expected, actual);
 
