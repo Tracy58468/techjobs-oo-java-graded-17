@@ -68,7 +68,7 @@ public class JobTest {
         // Assert
         String msg = "Custom toString method returns correct string.";
         String expected = System.lineSeparator() +
-                "ID: 1" +
+                "ID: " + job1.getId() +
                 System.lineSeparator() +
                 "Name: Product tester" +
                 System.lineSeparator() +
@@ -97,7 +97,7 @@ public class JobTest {
         // Assert
         String msg = "Custom toString method returns correct string.";
         String expected = System.lineSeparator() +
-                "ID: " + job1.getNextId() +
+                "ID: " + job1.getId() +
                 System.lineSeparator() +
                 "Name: Product tester" +
                 System.lineSeparator() +
@@ -111,7 +111,7 @@ public class JobTest {
                 System.lineSeparator();
 
         String actual = System.lineSeparator() +
-                "ID: " + Job.getNextId() +
+                "ID: " + job1.getId() +
                 System.lineSeparator() +
                 "Name: " + job1.getName() +
                 System.lineSeparator() +
